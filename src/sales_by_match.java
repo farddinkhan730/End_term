@@ -151,3 +151,101 @@ class Solution789456 {
         System.out.println(max);
     }
 }
+class cats_and_a_mouse{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int q=sc.nextInt();
+        for (int i = 0; i < q; i++) {
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            int c = sc.nextInt();
+            if (Math.abs(c - x) > Math.abs(c - y)) {
+                System.out.println("Cat B");
+            } else if (Math.abs(c - x) < Math.abs(c - y)) {
+                System.out.println("Cat A");
+            } else {
+                System.out.println("Mouse C");
+            }
+        }
+//           OR
+//            if(x==c && y==c){
+//                System.out.println("Mouse C i=" + i);
+//            }
+//            if(c>x  && c==y ){
+//                if(c-x <c-y) {
+//                    System.out.println("Cat B");
+//                }
+//            }
+//            if(c==x && (c>y || c<y)){
+//                System.out.println("Cat A");
+//            }
+//            if(c>x && c>y){
+//                if(c-x> c-y){
+//                    System.out.println("Cat B 1 i="+ i);
+//                }
+//                if(c-x < c-y){
+//                    System.out.println("Cat A 2 i=" +i);
+//                }
+//                if(c-x==c-y){
+//                    System.out.println("Mouse C 3 i="+i);
+//                }
+//            }
+//            if(c<x && c<y){
+//                if(x-c> y-c){
+//                    System.out.println("Cat B 4 i="+i);
+//                }
+//                if(x-c < y-c){
+//                    System.out.println("Cat A 5 i="+i);
+//                }
+//                if(x-c==y-c){
+//                    System.out.println("Mouse C 6 i="+i);
+//                }
+//            }
+//            if(c>x && c<y){
+//                if(c-x> y-c){
+//                    System.out.println("Cat B 7 i="+i);
+//                }
+//                if(c-x < y-c){
+//                    System.out.println("Cat A 8 i=" +i);
+//                }
+//                if(c-x==y-c){
+//                    System.out.println("Mouse C 9 i="+i);
+//                }
+//            }
+//            if(c<x && c>y){
+//                if(x-c> c-y){
+//                    System.out.println("Cat B 10 i="+i);
+//                }
+//                if(x-c < c-y){
+//                    System.out.println("Cat A 11 i="+i);
+//                }
+//                if(x-c==c-y){
+//                    System.out.println("Mouse C 12 i=" +i);
+//                }
+//            }
+//        }
+
+    }
+}
+class picking_number{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int l[]=new int[n];
+        for (int i = 0; i < n; i++) {
+            l[i]=sc.nextInt();
+        }
+        int max=0;
+        for (int i=0;i<n;i++) {
+            for (int j=0;j<n;j++) {
+                if((l[i]-l[j])<=1){
+                    int c=l[i]-l[j];
+                    if(max<c)
+                        max=c;
+                }
+
+            }
+        }
+        System.out.println(max);
+    }
+}
