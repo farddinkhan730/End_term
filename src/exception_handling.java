@@ -13,14 +13,15 @@ public class exception_handling {
 }
 class A{
     public static void main(String args[]){
-        int a,b,result;
+        int b,result;
         Scanner s=new Scanner(System.in);
         System.out.println("Enter Numerator and Denominator");
         try{
-            a=s.nextInt();    //InputMismatchException may occur
+            String a=s.nextLine();    //InputMismatchException may occur
             b=s.nextInt();  //InputMismatchException may occur
-            result=a/b;     //ArithmeticException may occur
-            System.out.println("Result:"+result); }
+//            result=a/b;     //ArithmeticException may occur
+//            System.out.println("Result:"+result);
+            }
         catch(ArithmeticException e)
         {
             System.out.println("Cannot divide by zero");
@@ -86,12 +87,16 @@ class exc{
         }
     }
 class code{
+
     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
         try {
-            System.out.println(10/0);
-            System.out.println(args[2]);
+            String s=sc.nextLine();
+//            System.out.println(10/0);
+//            System.out.println(args[2]);
         }
         catch (Exception obj){
+            System.out.println(obj.getClass().getName());
             obj.printStackTrace();
         }
         System.out.println("End of the Main Method");
