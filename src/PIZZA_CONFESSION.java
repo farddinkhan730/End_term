@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
 
 public class PIZZA_CONFESSION {
     public static void main(String[] args) {
@@ -87,4 +85,53 @@ class TtClass {
         }
     }
 }
+class emp20 {
+    public String name;
+    public int id;
 
+    emp20(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + id;
+    }
+
+}
+class Sortbyid implements Comparator<emp20> {
+    @Override
+    public int compare(emp20 o1, emp20 o2) {
+        if (o1.id > o2.id) {
+            return -1;
+        }
+        if (o1.id < o2.id) {
+            return 1;
+        }
+        return 0;
+    }
+
+}
+class Sortbyname implements Comparator<emp20> {
+
+    @Override
+    public int compare(emp20 o1, emp20 o2) {
+        return o1.name.compareTo(o2.name);
+    }
+}
+class sortest{
+    public static void main(String[] args) throws Exception{
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        ArrayList<emp20> obj=new ArrayList<emp20>();
+        sc.nextLine();
+        for (int i = 0; i < n; i++) {
+            obj.add(new emp20(sc.next(), sc.nextInt()));
+            sc.nextLine();
+        }
+            Collections.sort(obj,new Sortbyname());
+            System.out.println(obj.get(0).name);
+
+    }
+}
